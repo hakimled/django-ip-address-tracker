@@ -1,3 +1,8 @@
 from django.db import models
 
-# Create your models here.
+class UserIP(models.Model):
+    ip_address = models.GenericIPAddressField()
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.ip_address
